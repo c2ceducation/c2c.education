@@ -5215,7 +5215,7 @@ body .modal-backdrop {
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-  padding: 150px 0;
+  padding: 20px 0;
 }
 .rs-services.home12-style .services-item {
   padding: 45px 15px 40px 15px;
@@ -13616,7 +13616,7 @@ body .modal-backdrop {
   background: #ed3600;
 }
 .rs-footer.home9-style .footer-top {
-  padding: 218px 0 93px;
+  padding: 50px 0 93px;
 }
 .rs-footer.home9-style .footer-top .widget-title {
   color: #ffffff;
