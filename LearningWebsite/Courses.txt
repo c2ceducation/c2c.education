@@ -1,0 +1,17 @@
+
+Main Menu & its Pages
+Home
+About Us
+ContactUs
+Faq
+Courses
+Web Development
+	Php, Phyton, UI Development, MVC .Net, Photoshop
+ERP
+	SAP, Salesforce
+Database
+	Oracle, MS SQL, MySQL
+Cloud
+	AWS, Google Cloud, Azure
+CMS
+	Sitecore
