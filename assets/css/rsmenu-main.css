@@ -165,6 +165,7 @@ Version: 1.0.0
 .rs-menu ul ul.visible, .rs-menu ul .rs-mega-menu ul.visible ul.sub-menu {	
 	display:block;
    z-index: 110;
+	 background-color: blue !important;
 }
 
 /* Adjust position of mega-menu */
@@ -573,7 +574,7 @@ Version: 1.0.0
     }
    	
 	.nav-menu > li > a {
-		border-bottom:1px solid #131313;
+		border-bottom: 1.5px solid #73748d;
 		text-align: left;
 	}	
 	.nav-menu > li:last-child a {
@@ -604,7 +605,13 @@ Version: 1.0.0
 
 	.rs-header .menu-area .main-menu .rs-menu ul.nav-menu {
 		background: #fff;
+		border-top: 2px solid #7ef19c;
+		box-shadow: -3px 4px 5px 0px rgba(188,247,218,0.74);
+		-webkit-box-shadow: -3px 4px 5px 0px rgba(188,247,218,0.74);
+		-moz-box-shadow: -3px 4px 5px 0px rgba(188,247,218,0.74);
+		
 	}
+
 	.rs-header .menu-area .main-menu .rs-menu ul.nav-menu li {
 		display: block !important;
 		margin-right: 0 !important;
@@ -617,7 +624,8 @@ Version: 1.0.0
 	}
 
 	.rs-header .menu-area .main-menu .rs-menu ul.sub-menu {
-		padding: 15px 0 0 !important;
+		padding: 0 !important;
+    border-top: 3px solid #3ee529;
 	}
 	.rs-header .menu-area .main-menu .rs-menu ul.sub-menu li a {
 		height: 50px !important;
@@ -678,6 +686,13 @@ Version: 1.0.0
 		/* Remove the blue Webkit background when element is tapped */
 		-webkit-tap-highlight-color:rgba(0,0,0,0);    
 	}
+
+	.nav-menu > .menu-item-has-children > span.rs-menu-parent:hover,
+	.nav-menu > .menu-item-has-children .sub-menu .menu-item-has-children span.rs-menu-parent:hover {
+		background-color: #ebebeb;
+		transition: background-color .8s;
+	}
+	
 	.nav-menu span.rs-menu-parent i { 
 		margin:0;
 	}
