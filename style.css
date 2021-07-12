@@ -11309,8 +11309,9 @@ body .modal-backdrop {
   background-size: cover;
   background-repeat: no-repeat;
   border-radius: 3px;
-  padding: 60px 70px;
+  padding: 90px 29px;
   position: relative;
+  left:70%;
 }
 .rs-newsletter.style1 .newsletter-wrap .content-part .sec-title {
   display: flex;
