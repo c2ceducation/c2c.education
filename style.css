@@ -7672,7 +7672,7 @@ body .modal-backdrop {
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
-  padding: 200px 0;
+  padding: 0px 0;
 }
 .why-choose-us.style3 .services-part {
   display: flex;
