@@ -7672,7 +7672,7 @@ body .modal-backdrop {
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
-  padding: 200px 0;
+  padding: 0px 0;
 }
 .why-choose-us.style3 .services-part {
   display: flex;
@@ -11309,8 +11309,9 @@ body .modal-backdrop {
   background-size: cover;
   background-repeat: no-repeat;
   border-radius: 3px;
-  padding: 60px 70px;
+  padding: 89px 150px;
   position: relative;
+  left:61%;
 }
 .rs-newsletter.style1 .newsletter-wrap .content-part .sec-title {
   display: flex;
@@ -11336,6 +11337,7 @@ body .modal-backdrop {
   color: #505050;
   padding: 17px 30px;
   padding-right: 150px;
+  border: 1px solid #a8a8af;
 }
 .rs-newsletter.style1 .newsletter-wrap .newsletter-form button {
   position: absolute;
