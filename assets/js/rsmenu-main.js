@@ -1,9 +1,7 @@
-console.log('Loading Rs menu');
-
 $(window).on("load", function() {
 	$(document).ready(function () {
 		// Strict Mode
-		"use strict";
+		"use strict"
 	
 		//Defines variables	
 		var arrow_up = '<i class="fa fa-angle-up" aria-hidden="true"></i>';
