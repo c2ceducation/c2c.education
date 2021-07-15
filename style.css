@@ -1725,7 +1725,7 @@ ul.listing-style.modify li:before {
   z-index: 9;
 }
 .full-width-header .rs-header .logo-part img {
-  max-height: 40px;
+  max-height: 80px;
 }
 .full-width-header .rs-header .menu-area {
   transition: all 0.3s ease;
