@@ -66,6 +66,8 @@ function includeHTML() {
   <link rel="stylesheet" type="text/css" href="style.css"> <!-- This stylesheet dynamically changed from style.less -->
   <!-- responsive css -->
   <link rel="stylesheet" type="text/css" href="assets/css/responsive.css">
+  <link rel="stylesheet" href="assets/css/whatsapp-chat-support.css">
+  <link rel="stylesheet" href="assets/css/whatsapp-custom.css">
   <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
@@ -149,6 +151,51 @@ function includeHTML() {
         <!-- Search Modal Start -->
         <div w3-include-html="Components\SearchModel.html"></div
         <!-- Search Modal End -->
+
+        <!-- Whatsapp chat support starts -->
+        <div class="whatsapp_chat_support wcs_fixed_right" id="whatsapp-popup">
+          <div class="wcs_button wcs_button_circle">
+              <span class="fa fa-whatsapp"></span>
+          </div>  
+      
+          <div class="wcs_popup">
+              <div class="wcs_popup_close">
+                  <span class="fa fa-close"></span>
+              </div>
+              <div class="wcs_popup_header">
+                  <strong>Need Help? Chat with us</strong>
+              </div>  
+              <div class="wcs_popup_person_container">
+                  <div 
+                      class="wcs_popup_person" 
+                      data-number="1"
+                  >
+                      <div class="wcs_popup_person_img">
+                          <img src="assets/images/user-illustration.svg"
+                              alt="Illustration image of a user">
+                      </div>
+                      <div class="wcs_popup_person_content">
+                          <div class="wcs_popup_person_name">For Course Joining</div>
+                          <div class="wcs_popup_person_status">Available</div>
+                      </div>  
+                  </div>
+                  <div 
+                      class="wcs_popup_person" 
+                      data-number="1"
+                  >
+                      <div class="wcs_popup_person_img">
+                          <img src="assets/images/user-illustration.svg"
+                              alt="Illustration image of a user">
+                      </div>
+                      <div class="wcs_popup_person_content">
+                          <div class="wcs_popup_person_name">To Become Instructor</div>
+                          <div class="wcs_popup_person_status">Available</div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>  
+      <!-- End::Whatsapp chat support -->
         
         <!-- modernizr js -->
         <script src="assets/js/modernizr-2.8.3.min.js"></script>
@@ -187,9 +234,14 @@ function includeHTML() {
         <script src="assets/js/main.js"></script>		
         <!-- Menu js -->
         <script src="assets/js/rsmenu-main.js"></script>
-      <script>
-includeHTML();
-</script>
-    </body>
-
+        <!-- Whatsapp support js -->
+        <script src="assets/js/whatsapp-chat-support.js"></script>
+        <script>
+          includeHTML();
+        </script>
+        <!-- Initializing whatsapp chat support -->
+        <script>
+          jQuery('#whatsapp-popup').whatsappChatSupport();
+        </script>
+  </body>
 </html>
