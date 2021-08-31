@@ -53,6 +53,7 @@
     37. Footer Section CSS
     38. Scroll Up CSS
     39. Preloader CSS
+    40. Privacy, t & c CSS
 
 --------------------------------------------------------*/
 /* -----------------------------------
@@ -14455,4 +14456,30 @@ body .modal-backdrop {
   100% {
     transform: scale(1.2);
   }
+}
+/* -------------------------------------- */
+
+/* -----------------------------------
+    40. Privacy, t & c CSS
+-------------------------------------*/
+.privacy-policy, .terms-and-conditions {
+  margin: 3rem auto 4.5rem auto;
+}
+
+.privacy-policy > h2, .terms-and-conditions > h2 {
+  margin-bottom: -20px;
+}
+
+.privacy-policy article, .terms-and-conditions article {
+  margin-top: 2.5rem;
+  margin-bottom: -1.5rem;
+}
+
+.privacy-policy article h4, .terms-and-conditions article h4 {
+  margin: 10px 0;
+}
+
+.privacy-policy article p, .terms-and-conditions article p {
+  margin: 12px 0;
+  font-size: 18px;
 }
