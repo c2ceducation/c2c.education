@@ -1,79 +1,83 @@
 <!DOCTYPE html>
 <html lang="zxx">  
-    <head>
-<script>
-function includeHTML() {
-  var z, i, elmnt, file, xhttp;
-  /*loop through a collection of all HTML elements:*/
-  z = document.getElementsByTagName("*");
-  for (i = 0; i < z.length; i++) {
-    elmnt = z[i];
-    /*search for elements with a certain atrribute:*/
-    file = elmnt.getAttribute("w3-include-html");
-    if (file) {
-      /*make an HTTP request using the attribute value as the file name:*/
-      xhttp = new XMLHttpRequest();
-      xhttp.onreadystatechange = function() {
-        if (this.readyState == 4) {
-          if (this.status == 200) {elmnt.innerHTML = this.responseText;}
-          if (this.status == 404) {elmnt.innerHTML = "Page not found.";}
-          /*remove the attribute, and call this function once more:*/
-          elmnt.removeAttribute("w3-include-html");
-          includeHTML();
-        }
-      }      
-      xhttp.open("GET", file, true);
-      xhttp.send();
-      /*exit the function:*/
-      return;
-    }
-  }
-};
+<head>
+    <script>
+        function includeHTML() {
+            var z, i, elmnt, file, xhttp;
+            /*loop through a collection of all HTML elements:*/
+            z = document.getElementsByTagName("*");
+            for (i = 0; i < z.length; i++) {
+                elmnt = z[i];
+                /*search for elements with a certain atrribute:*/
+                file = elmnt.getAttribute("w3-include-html");
+                if (file) {
+                    /*make an HTTP request using the attribute value as the file name:*/
+                    xhttp = new XMLHttpRequest();
+                    xhttp.onreadystatechange = function () {
+                        if (this.readyState == 4) {
+                            if (this.status == 200) { elmnt.innerHTML = this.responseText; }
+                            if (this.status == 404) { elmnt.innerHTML = "Page not found."; }
+                            /*remove the attribute, and call this function once more:*/
+                            elmnt.removeAttribute("w3-include-html");
+                            includeHTML();
+                        }
+                    }
+                    xhttp.open("GET", file, true);
+                    xhttp.send();
+                    /*exit the function:*/
+                    return;
+                }
+            }
+        };
 
-</script>
-</script>
-        <!-- meta tag -->
-        <meta charset="utf-8">
-        <title>C2C Education </title>
-        <meta name="description" content="">
-        <!-- responsive tag -->
-        <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <!-- favicon -->
-	<link rel="icon" href="assets/images/favicon (1).ico" type="image/x-icon">
-        <link rel="apple-touch-icon" href="apple-touch-icon.png">
-        <link rel="shortcut icon" type="image/x-icon" href="assets/images/fav.png">
-        <!-- Bootstrap v4.4.1 css -->
-        <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css">
-        <!-- font-awesome css -->
-        <link rel="stylesheet" type="text/css" href="assets/css/font-awesome.min.css">
-        <!-- animate css -->
-        <link rel="stylesheet" type="text/css" href="assets/css/animate.css">
-        <!-- owl.carousel css -->
-        <link rel="stylesheet" type="text/css" href="assets/css/owl.carousel.css">
-        <!-- slick css -->
-        <link rel="stylesheet" type="text/css" href="assets/css/slick.css">
-        <!-- off canvas css -->
-        <link rel="stylesheet" type="text/css" href="assets/css/off-canvas.css">
-        <!-- linea-font css -->
-        <link rel="stylesheet" type="text/css" href="assets/fonts/linea-fonts.css">
-        <!-- flaticon css  -->
-        <link rel="stylesheet" type="text/css" href="assets/fonts/flaticon.css">
-        <!-- magnific popup css -->
-        <link rel="stylesheet" type="text/css" href="assets/css/magnific-popup.css">
-        <!-- Main Menu css -->
-        <link rel="stylesheet" href="assets/css/rsmenu-main.css">
-        <!-- spacing css -->
-        <link rel="stylesheet" type="text/css" href="assets/css/rs-spacing.css">
-        <!-- style css -->
-        <link rel="stylesheet" type="text/css" href="style.css"> <!-- This stylesheet dynamically changed from style.less -->
-        <!-- responsive css -->
-        <link rel="stylesheet" type="text/css" href="assets/css/responsive.css">
-        <!--[if lt IE 9]>
-            <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-            <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-        <![endif]-->
-    </head>
+    </script>
+    </script>
+    <!-- meta tag -->
+    <meta charset="utf-8">
+    <title>C2C Education </title>
+    <meta name="description" content="">
+    <!-- responsive tag -->
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- favicon -->
+    <link rel="icon" href="assets/images/favicon (1).ico" type="image/x-icon">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    <link rel="shortcut icon" type="image/x-icon" href="assets/images/fav.png">
+    <!-- Bootstrap v4.4.1 css -->
+    <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css">
+    <!-- font-awesome css -->
+    <link rel="stylesheet" type="text/css" href="assets/css/font-awesome.min.css">
+    <!-- animate css -->
+    <link rel="stylesheet" type="text/css" href="assets/css/animate.css">
+    <!-- owl.carousel css -->
+    <link rel="stylesheet" type="text/css" href="assets/css/owl.carousel.css">
+    <!-- slick css -->
+    <link rel="stylesheet" type="text/css" href="assets/css/slick.css">
+    <!-- off canvas css -->
+    <link rel="stylesheet" type="text/css" href="assets/css/off-canvas.css">
+    <!-- linea-font css -->
+    <link rel="stylesheet" type="text/css" href="assets/fonts/linea-fonts.css">
+    <!-- flaticon css  -->
+    <link rel="stylesheet" type="text/css" href="assets/fonts/flaticon.css">
+    <!-- magnific popup css -->
+    <link rel="stylesheet" type="text/css" href="assets/css/magnific-popup.css">
+    <!-- Main Menu css -->
+    <link rel="stylesheet" href="assets/css/rsmenu-main.css">
+    <!-- spacing css -->
+    <link rel="stylesheet" type="text/css" href="assets/css/rs-spacing.css">
+    <!-- style css -->
+    <link rel="stylesheet" type="text/css" href="style.css"> <!-- This stylesheet dynamically changed from style.less -->
+    <!-- responsive css -->
+    <link rel="stylesheet" type="text/css" href="assets/css/responsive.css">
+    <!-- Whatsapp css -->
+    <link rel="stylesheet" href="assets/css/whatsapp-chat-support.css">
+    <link rel="stylesheet" href="assets/css/whatsapp-custom.css">
+
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+        <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
     <body class="defult-home">
         
         <!--Preloader area start here-->
@@ -94,162 +98,237 @@ function includeHTML() {
                 <!-- Topbar Area Start -->
                 <div w3-include-html="Components\Topbar.html"></div>
                 <!-- Topbar Area End -->
-				<div w3-include-html="Components\Scroll.html"></div
-        <!-- End scrollUp  -->
-		<!--Menu Start-->
-			<div w3-include-html="Components\Menu.html"></div
-			<!--Menu stop-->
-		<!--Breadcrumps Start-->
-		<div w3-include-html="Components\Breadcrumbs.html"></div
-			<!--Breadcrumps End --!>
-			
-			<!--IntroCourse Start-->
-		 <section class="intro-section gray-bg pt-94 pb-100 md-pt-64 md-pb-70">
-                <div class="container">
-                    <div class="row clearfix">
-                        <!-- Content Column -->
-                        <div class="col-lg-8 md-mb-50">
-                            <!-- Intro Info Tabs-->
-                            <div class="intro-info-tabs">
-                                <ul class="nav nav-tabs intro-tabs tabs-box" id="myTab" role="tablist">
-                                    <li class="nav-item tab-btns">
-                                        <a class="nav-link tab-btn active" id="prod-overview-tab" data-toggle="tab" href="#prod-overview" role="tab" aria-controls="prod-overview" aria-selected="true">Overview</a>
-                                    </li>                                   
-                                  
-                                </ul>
-                                <div class="tab-content tabs-content" id="myTabContent">
-                                    <div class="tab-pane tab fade show active" id="prod-overview" role="tabpanel" aria-labelledby="prod-overview-tab">
-                                        <div class="content white-bg pt-30">
-                                            <!-- Cource Overview -->
-                                            <div class="course-overview">
-                                                <div class="inner-box">
-                                                    <h4>Python Course Details</h4>
-                                                    <p>Python is an interpreted, high-level, general-purpose programming language that emphasizes code readability</p>
-													<p>It’s a dynamically typed and garbage-collected language that supports structured, object-oriented, and functional programming. It’s often described as a "batteries included" language due to its comprehensive standard library. In this path you will learn the basics of Python and more advanced topics such as object-oriented design and code organization</p>
-                                                    <ul class="student-list">
-                                                        <li>305 Total Students</li>
-                                                        <li><span class="theme_color">5</span> <span class="fa fa-star"></span><span class="fa fa-star"></span><span class="fa fa-star"></span><span class="fa fa-star"></span><span class="fa fa-star"></span> (536 Rating)</li>
-                                                        <li>256 Reviews</li>
-                                                    </ul>
-                                                    <h3>What you’ll learn?</h3>
-                                                    <ul class="review-list">
-													<li>Have a fundamental understanding of the Python programming language</li>
-                                                        <li>Understand how to create your own Python programs</li>
-                                                        <li>Program flow control in python</li>
-                                                        <li>Learn how to write desktop applications with Python</li>
-														
-                                                                                                            
-                                                    </ul>
-                                                    <h3>Requirements</h3>
-                                                    <ul class="review-list">
-                                                        <li>A computer - Windows, Mac, and Linux are all supported. Setup and installation instructions are included for each platform.</li>
-														                                                        
-                                                    </ul>                                                                                                          
+                <div w3-include-html="Components\Scroll.html"></div>
+                <!-- End scrollUp  -->
+                <!--Menu Start-->
+                <div w3-include-html="Components\Menu.html"></div>
+                <!--Menu stop-->
+                <!--Breadcrumps Start-->
+                <div w3-include-html="Components\Breadcrumbs.html"></div>
+                <!--Breadcrumps End -->
+                <!--IntroCourse Start-->
+                <section class="intro-section gray-bg pt-94 pb-100 md-pt-64 md-pb-70">
+                    <div class="container">
+                        <div class="row clearfix">
+                            <!-- Content Column -->
+                            <div class="col-lg-8 md-mb-50">
+                                <!-- Intro Info Tabs-->
+                                <div class="intro-info-tabs">
+                                    <ul class="nav nav-tabs intro-tabs tabs-box" id="myTab" role="tablist">
+                                        <li class="nav-item tab-btns">
+                                            <a class="nav-link tab-btn active" id="prod-overview-tab" data-toggle="tab" href="#prod-overview" role="tab" aria-controls="prod-overview" aria-selected="true">Overview</a>
+                                        </li>
+
+                                    </ul>
+                                    <div class="tab-content tabs-content" id="myTabContent">
+                                        <div class="tab-pane tab fade show active" id="prod-overview" role="tabpanel" aria-labelledby="prod-overview-tab">
+                                            <div class="content white-bg pt-30">
+                                                <!-- Cource Overview -->
+                                                <div class="course-overview">
+                                                    <div class="inner-box">
+                                                        <h4>Python Course Details</h4>
+                                                        <p>Python is an interpreted, high-level, general-purpose programming language that emphasizes code readability</p>
+                                                        <p>It’s a dynamically typed and garbage-collected language that supports structured, object-oriented, and functional programming. It’s often described as a "batteries included" language due to its comprehensive standard library. In this path you will learn the basics of Python and more advanced topics such as object-oriented design and code organization</p>
+                                                        <ul class="student-list">
+                                                            <li>305 Total Students</li>
+                                                            <li><span class="theme_color">5</span> <span class="fa fa-star"></span><span class="fa fa-star"></span><span class="fa fa-star"></span><span class="fa fa-star"></span><span class="fa fa-star"></span> (536 Rating)</li>
+                                                            <li>256 Reviews</li>
+                                                        </ul>
+                                                        <h3>What you’ll learn?</h3>
+                                                        <ul class="review-list">
+                                                            <li>Have a fundamental understanding of the Python programming language</li>
+                                                            <li>Understand how to create your own Python programs</li>
+                                                            <li>Program flow control in python</li>
+                                                            <li>Learn how to write desktop applications with Python</li>
+
+
+                                                        </ul>
+                                                        <h3>Requirements</h3>
+                                                        <ul class="review-list">
+                                                            <li>A computer - Windows, Mac, and Linux are all supported. Setup and installation instructions are included for each platform.</li>
+
+                                                        </ul>
+                                                    </div>
                                                 </div>
-                                            </div>                                                
+                                            </div>
                                         </div>
-                                    </div>                                    
-                                   
-                                                                     
+
+
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Video Column -->
+                            <div class="video-column col-lg-4">
+                                <div class="inner-column">
+
+
+                                    <div class="course-features-info">
+                                        <ul>
+                                            <li class="lectures-feature">
+                                                <i class="fa fa-files-o"></i>
+                                                <span class="label">Lectures</span>
+                                                <span class="value">30</span>
+                                            </li>
+
+                                            <li class="quizzes-feature">
+                                                <i class="fa fa-puzzle-piece"></i>
+                                                <span class="label">Quizzes</span>
+                                                <span class="value">10</span>
+                                            </li>
+
+                                            <li class="duration-feature">
+                                                <i class="fa fa-clock-o"></i>
+                                                <span class="label">Duration</span>
+                                                <span class="value">61 hours </span>
+                                            </li>
+
+                                            <li class="students-feature">
+                                                <i class="fa fa-users"></i>
+                                                <span class="label">Students</span>
+                                                <span class="value">25</span>
+                                            </li>
+
+                                            <li class="assessments-feature">
+                                                <i class="fa fa-check-square-o"></i>
+                                                <span class="label">Assessments</span>
+                                                <span class="value">Yes</span>
+                                            </li>
+                                        </ul>
+                                    </div>
+
+                                    <div class="btn-part">
+                                        <a href="#0" id="amount" class="btn readon2 orange">₹25,000</a>
+                                        <a href="#0" class="btn readon2" data-toggle="modal" data-target="#myCenteredModal">Buy Now</a>
+                                        <!-- Button to open the modal -->
+                                        <!-- Modal -->
+                                        <div class="modal" id="myCenteredModal">
+                                            <div class="modal-dialog modal-dialog-centered">
+                                                <div class="modal-content">
+
+                                                    <!-- Modal header -->
+                                                    <div class="modal-header">
+                                                        <h4 class="modal-title">Pay Through</h4>
+                                                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                    </div>
+
+                                                    <!-- Modal body
+                                        <div class="modal-body">
+                                        ...
+                                        </div>-->
+
+                                                    <div class="modal-footer">
+                                                        <br>
+                                                        <button type="button" class="btn"><a href="" id="pay" class="btn readon2 orange">Buy with Cash Free ₹25,000</a></button>
+                                                        <button type="button" class="btn"><a href="" id="paytwo" class="btn readon2 orange">Buy with Plural PG ₹25,000</a></button>
+                                                    </div>
+
+
+
+
+
+
+
+                </section>
+                <!--IntroCourse End-->
+                <!-- Footer Start -->
+                <div w3-include-html="Components\Footer.html"></div>
+                <!-- Footer End -->
+
+                <!-- Whatsapp chat support starts -->
+                <div class="whatsapp_chat_support wcs_fixed_right" style="width: 50px;"
+                     id="whatsapp-popup">
+                    <div class="wcs_button wcs_button_circle">
+                        <span class="fa fa-whatsapp"></span>
+                    </div>
+
+                    <div class="wcs_popup">
+                        <div class="wcs_popup_close">
+                            <span class="fa fa-close"></span>
+                        </div>
+                        <div class="wcs_popup_header">
+                            <strong>Need Help? Chat with us</strong>
+                        </div>
+                        <div class="wcs_popup_person_container">
+                            <div class="wcs_popup_person"
+                                 data-number="1">
+                                <div class="wcs_popup_person_img">
+                                    <img src="assets/images/user-illustration.svg"
+                                         alt="Illustration image of a user">
+                                </div>
+                                <div class="wcs_popup_person_content">
+                                    <div class="wcs_popup_person_name">For Course Joining</div>
+                                    <div class="wcs_popup_person_status">Available</div>
+                                </div>
+                            </div>
+                            <div class="wcs_popup_person" data-number="1">
+                                <div class="wcs_popup_person_img">
+                                    <img src="assets/images/user-illustration.svg" alt="Illustration image of a user">
+                                </div>
+                                <div class="wcs_popup_person_content">
+                                    <div class="wcs_popup_person_name">To Become Instructor</div>
+                                    <div class="wcs_popup_person_status">Available</div>
                                 </div>
                             </div>
                         </div>
-                        
-                        <!-- Video Column -->
-                        <div class="video-column col-lg-4">
-                            <div class="inner-column">
-                            
-                                
-                                <div class="course-features-info">
-                                    <ul>
-                                        <li class="lectures-feature">
-                                            <i class="fa fa-files-o"></i>
-                                            <span class="label">Lectures</span>
-                                            <span class="value">30</span>
-                                        </li>
-                                       
-                                        <li class="quizzes-feature">
-                                            <i class="fa fa-puzzle-piece"></i>
-                                            <span class="label">Quizzes</span>
-                                            <span class="value">10</span>
-                                        </li>
-                                       
-                                        <li class="duration-feature">
-                                            <i class="fa fa-clock-o"></i>
-                                            <span class="label">Duration</span>
-                                            <span class="value">61 hours </span>
-                                        </li>
-                                      
-                                        <li class="students-feature">
-                                            <i class="fa fa-users"></i>
-                                            <span class="label">Students</span>
-                                            <span class="value">25</span>
-                                        </li>
-                                       
-                                        <li class="assessments-feature">
-                                            <i class="fa fa-check-square-o"></i>
-                                            <span class="label">Assessments</span>
-                                            <span class="value">Yes</span>
-                                        </li>
-                                    </ul>
-                                </div>
-                                
-                                <div class="btn-part">
-                                    <a href="#0" id="amount" class="btn readon2 orange">₹25,000</a>
-                                    <a href="#0" id="pay" class="btn readon2 orange-transparent">Buy Now</a>
-                                </div>
-                            </div>
-                        </div>                        
-                    </div>                
+                    </div>
                 </div>
-            </section>
-			<!--IntroCourse End-->
-			
-				 <!-- Footer Start -->
-         <div w3-include-html="Components\Footer.html"></div
-        <!-- Footer End -->
-		<!-- modernizr js -->
-        <script src="assets/js/modernizr-2.8.3.min.js"></script>
-        <!-- jquery latest version -->
-        <script src="assets/js/jquery.min.js"></script>
-        <!-- Bootstrap v4.4.1 js -->
-        <script src="assets/js/bootstrap.min.js"></script>
-        <!-- Menu js -->
-        <script src="assets/js/rsmenu-main.js"></script> 
-        <!-- op nav js -->
-        <script src="assets/js/jquery.nav.js"></script>
-        <!-- owl.carousel js -->
-        <script src="assets/js/owl.carousel.min.js"></script>
-        <!-- Slick js -->
-        <script src="assets/js/slick.min.js"></script>
-        <!-- isotope.pkgd.min js -->
-        <script src="assets/js/isotope.pkgd.min.js"></script>
-        <!-- imagesloaded.pkgd.min js -->
-        <script src="assets/js/imagesloaded.pkgd.min.js"></script>
-        <!-- wow js -->
-        <script src="assets/js/wow.min.js"></script>
-        <!-- Skill bar js -->
-        <script src="assets/js/skill.bars.jquery.js"></script>
-        <script src="assets/js/jquery.counterup.min.js"></script>        
-         <!-- counter top js -->
-        <script src="assets/js/waypoints.min.js"></script>
-        <!-- video js -->
-        <script src="assets/js/jquery.mb.YTPlayer.min.js"></script>
-        <!-- magnific popup js -->
-        <script src="assets/js/jquery.magnific-popup.min.js"></script>
-        <!-- tilt js -->
-        <script src="assets/js/tilt.jquery.min.js"></script>      
-        <!-- plugins js -->
-        <script src="assets/js/plugins.js"></script>
-        <!-- contact form js -->
-        <script src="assets/js/contact.form.js"></script>
-        <!-- main js -->
-        <script src="assets/js/main.js"></script>
-	<!--payment js-->
-	<script  src="assets/js/pay.js"></script>
-			<script>
-includeHTML();
-</script>
-    </body>
+                <!-- End::Whatsapp chat support -->
+
+                <!-- modernizr js -->
+                <script src="assets/js/modernizr-2.8.3.min.js"></script>
+                <!-- jquery latest version -->
+                <script src="assets/js/jquery.min.js"></script>
+                <!-- Bootstrap v4.4.1 js -->
+                <script src="assets/js/bootstrap.min.js"></script>
+                <!-- Menu js -->
+                <script src="assets/js/rsmenu-main.js"></script>
+                <!-- op nav js -->
+                <script src="assets/js/jquery.nav.js"></script>
+                <!-- owl.carousel js -->
+                <script src="assets/js/owl.carousel.min.js"></script>
+                <!-- Slick js -->
+                <script src="assets/js/slick.min.js"></script>
+                <!-- isotope.pkgd.min js -->
+                <script src="assets/js/isotope.pkgd.min.js"></script>
+                <!-- imagesloaded.pkgd.min js -->
+                <script src="assets/js/imagesloaded.pkgd.min.js"></script>
+                <!-- wow js -->
+                <script src="assets/js/wow.min.js"></script>
+                <!-- Skill bar js -->
+                <script src="assets/js/skill.bars.jquery.js"></script>
+                <script src="assets/js/jquery.counterup.min.js"></script>
+                <!-- counter top js -->
+                <script src="assets/js/waypoints.min.js"></script>
+                <!-- video js -->
+                <script src="assets/js/jquery.mb.YTPlayer.min.js"></script>
+                <!-- magnific popup js -->
+                <script src="assets/js/jquery.magnific-popup.min.js"></script>
+                <!-- tilt js -->
+                <script src="assets/js/tilt.jquery.min.js"></script>
+                <!-- plugins js -->
+                <script src="assets/js/plugins.js"></script>
+                <!-- contact form js -->
+                <script src="assets/js/contact.form.js"></script>
+                <!-- main js -->
+                <script src="assets/js/main.js"></script>
+                <!--payment js-->
+                <script src="assets/js/pay.js"></script>
+                <!-- Whatsapp support js -->
+                <script src="assets/js/moment.min.js"></script>
+                <script src="assets/js/moment-timezone-with-data-10-year-range.min.js"></script> <!-- spanish language (es) -->
+                <script src="assets/js/whatsapp-chat-support.js"></script>
+                <script>
+                    includeHTML();
+                </script>
+                <!-- Initializing whatsapp chat support -->
+                <script>
+                    jQuery('#whatsapp-popup').whatsappChatSupport();
+                </script>
+                <script>
+                    includeHTML();
+                </script>
+
+</body>
 
 </html>

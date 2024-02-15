@@ -14483,3 +14483,7 @@ body .modal-backdrop {
   margin: 12px 0;
   font-size: 18px;
 }
+.modal-backdrop.show {
+    background-color: revert !important;
+	position: absolute !important; 
+}

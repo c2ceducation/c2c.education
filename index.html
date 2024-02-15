@@ -16,7 +16,7 @@ function includeHTML() {
       xhttp.onreadystatechange = function() {
         if (this.readyState == 4) {
           if (this.status == 200) {elmnt.innerHTML = this.responseText;}
-          if (this.status == 404) {elmnt.innerHTML = "Page not found.";}
+          if (this.status == 404) {elmnt.innerHTML ="Page not found.";}
           /*remove the attribute, and call this function once more:*/
           elmnt.removeAttribute("w3-include-html");
           includeHTML();
@@ -109,31 +109,31 @@ function includeHTML() {
         <!--Full width header End-->
 
 		<!-- Main content Start -->
-       <div w3-include-html="Components\MainContent.html"></div
-            <!-- Banner Section Start -->
-             <div w3-include-html="Components\Banner.html"></div
+       <div w3-include-html="Components\MainContent.html"></div>
+            <!--- Banner Section Start -->
+             <div w3-include-html="Components\Banner.html"></div>
             <!-- Banner Section End -->
      
             
 
             <!-- Services Section Start -->
-             <div w3-include-html="Components\ServiceSection.html"></div
+             <div w3-include-html="Components\ServiceSection.html"></div>
             <!-- Services Section End -->
 
             <!-- Categories Section Start -->
-             <div w3-include-html="Components\Categories.html"></div
+             <div w3-include-html="Components\Categories.html"></div>
             <!-- Categories Section End -->
             
             <!-- Choose Section Start -->
-              <div w3-include-html="Components\ChooseSection.html"></div
+              <div w3-include-html="Components\ChooseSection.html"></div>
             <!-- Choose Section End -->
 
             <!-- Counter Section End -->
-            <div w3-include-html="Components\CounterSection.html"></div
+            <div w3-include-html="Components\CounterSection.html"></div>
             <!-- Counter Section Start -->
         
             <!-- Faq Section Start -->
-             <div w3-include-html="Components\FAQsection.html"></div
+             <div w3-include-html="Components\FAQsection.html"></div>
             <!-- faq Section Start -->
             
              
@@ -141,17 +141,17 @@ function includeHTML() {
         <!-- Main content End -->
 
         <!-- Footer Start -->
-         <div w3-include-html="Components\Footer.html"></div
+         <div w3-include-html="Components\Footer.html"></div>
         <!-- Footer End -->
 
 
         <!-- start scrollUp  -->
-        <div w3-include-html="Components\Scroll.html"></div
+        <div w3-include-html="Components\Scroll.html"></div>
         <!-- End scrollUp  -->
 
 
         <!-- Search Modal Start -->
-        <div w3-include-html="Components\SearchModel.html"></div
+        <div w3-include-html="Components\SearchModel.html"></div>
         <!-- Search Modal End -->
 
         <!-- Whatsapp chat support starts -->
@@ -169,10 +169,7 @@ function includeHTML() {
                   <strong>Need Help? Chat with us</strong>
               </div>  
               <div class="wcs_popup_person_container">
-                  <div 
-                      class="wcs_popup_person" 
-                      data-number="1"
-                  >
+                  <div class="wcs_popup_person" data-number="1" >
                       <div class="wcs_popup_person_img">
                           <img src="assets/images/user-illustration.svg"
                               alt="Illustration image of a user">
@@ -182,13 +179,9 @@ function includeHTML() {
                           <div class="wcs_popup_person_status">Available</div>
                       </div>  
                   </div>
-                  <div 
-                      class="wcs_popup_person" 
-                      data-number="1"
-                  >
+                  <div class="wcs_popup_person" data-number="1" >
                       <div class="wcs_popup_person_img">
-                          <img src="assets/images/user-illustration.svg"
-                              alt="Illustration image of a user">
+                          <img src="assets/images/user-illustration.svg" alt="Illustration image of a user">
                       </div>
                       <div class="wcs_popup_person_content">
                           <div class="wcs_popup_person_name">To Become Instructor</div>
