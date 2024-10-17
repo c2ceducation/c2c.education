@@ -1,351 +1,427 @@
 <!DOCTYPE html>
 <html lang="zxx">
-    <head> 
-	<script>
-function includeHTML() {
-  var z, i, elmnt, file, xhttp;
-  /*loop through a collection of all HTML elements:*/
-  z = document.getElementsByTagName("*");
-  for (i = 0; i < z.length; i++) {
-    elmnt = z[i];
-    /*search for elements with a certain atrribute:*/
-    file = elmnt.getAttribute("w3-include-html");
-    if (file) {
-      /*make an HTTP request using the attribute value as the file name:*/
-      xhttp = new XMLHttpRequest();
-      xhttp.onreadystatechange = function() {
-        if (this.readyState == 4) {
-          if (this.status == 200) {elmnt.innerHTML = this.responseText;}
-          if (this.status == 404) {elmnt.innerHTML = "Page not found.";}
-          /*remove the attribute, and call this function once more:*/
-          elmnt.removeAttribute("w3-include-html");
-          includeHTML();
-        }
-      }      
-      xhttp.open("GET", file, true);
-      xhttp.send();
-      /*exit the function:*/
-      return;
-    }
-  }
-};
-</script>
+<head>
+    <script>
+        function includeHTML() {
+            var z, i, elmnt, file, xhttp;
+            /*loop through a collection of all HTML elements:*/
+            z = document.getElementsByTagName("*");
+            for (i = 0; i < z.length; i++) {
+                elmnt = z[i];
+                /*search for elements with a certain atrribute:*/
+                file = elmnt.getAttribute("w3-include-html");
+                if (file) {
+                    /*make an HTTP request using the attribute value as the file name:*/
+                    xhttp = new XMLHttpRequest();
+                    xhttp.onreadystatechange = function () {
+                        if (this.readyState == 4) {
+                            if (this.status == 200) { elmnt.innerHTML = this.responseText; }
+                            if (this.status == 404) { elmnt.innerHTML = "Page not found."; }
+                            /*remove the attribute, and call this function once more:*/
+                            elmnt.removeAttribute("w3-include-html");
+                            includeHTML();
+                        }
+                    }
+                    xhttp.open("GET", file, true);
+                    xhttp.send();
+                    /*exit the function:*/
+                    return;
+                }
+            }
+        };
+    </script>
 
-        <!-- meta tag -->
-        <meta charset="utf-8">
-        <title>Educavo - Education HTML Template</title>
-        <meta name="description" content="">
-        <!-- responsive tag -->
-        <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <!-- favicon -->
-	    <link rel="icon" href="assets/images/favicon (1).ico" type="image/x-icon">
-        <link rel="apple-touch-icon" href="apple-touch-icon.png">
-        <link rel="shortcut icon" type="image/x-icon" href="assets/images/fav-orange.png">
-        <!-- Bootstrap v4.4.1 css -->
-        <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css">
-        <!-- font-awesome css -->
-        <link rel="stylesheet" type="text/css" href="assets/css/font-awesome.min.css">
-        <!-- animate css -->
-        <link rel="stylesheet" type="text/css" href="assets/css/animate.css">
-        <!-- off canvas css -->
-        <link rel="stylesheet" type="text/css" href="assets/css/off-canvas.css">
-        <!-- linea-font css -->
-        <link rel="stylesheet" type="text/css" href="assets/fonts/linea-fonts.css">
-        <!-- flaticon css  -->
-        <link rel="stylesheet" type="text/css" href="assets/fonts/flaticon.css">
-        <!-- Main Menu css -->
-        <link rel="stylesheet" href="assets/css/rsmenu-main.css">
-        <!-- spacing css -->
-        <link rel="stylesheet" type="text/css" href="assets/css/rs-spacing.css">
-        <!-- style css -->
-        <link rel="stylesheet" type="text/css" href="style.css"> <!-- This stylesheet dynamically changed from style.less -->
-        <!-- responsive css -->
-        <link rel="stylesheet" type="text/css" href="assets/css/responsive.css">
-        <!--[if lt IE 9]>
-            <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-            <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-        <![endif]-->
-    </head>
-    <body class="defult-home">
-        
-        <!--Preloader area start here-->
-        <div id="loader" class="loader orange-color">
-            <div class="loader-container">
-                <div class='loader-icon'>
-                    <img src="assets/images/pre-logo1.png" alt="">
-                </div>
+    <!-- meta tag -->
+    <meta charset="utf-8">
+    <title>Educavo - Education HTML Template</title>
+    <meta name="description" content="">
+    <!-- responsive tag -->
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- favicon -->
+    <link rel="icon" href="assets/images/favicon (1).ico" type="image/x-icon">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    <link rel="shortcut icon" type="image/x-icon" href="assets/images/fav-orange.png">
+    <!-- Bootstrap v4.4.1 css -->
+    <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css">
+    <!-- font-awesome css -->
+    <link rel="stylesheet" type="text/css" href="assets/css/font-awesome.min.css">
+    <!-- animate css -->
+    <link rel="stylesheet" type="text/css" href="assets/css/animate.css">
+    <!-- off canvas css -->
+    <link rel="stylesheet" type="text/css" href="assets/css/off-canvas.css">
+    <!-- linea-font css -->
+    <link rel="stylesheet" type="text/css" href="assets/fonts/linea-fonts.css">
+    <!-- flaticon css  -->
+    <link rel="stylesheet" type="text/css" href="assets/fonts/flaticon.css">
+    <!-- Main Menu css -->
+    <link rel="stylesheet" href="assets/css/rsmenu-main.css">
+    <!-- spacing css -->
+    <link rel="stylesheet" type="text/css" href="assets/css/rs-spacing.css">
+    <!-- style css -->
+    <link rel="stylesheet" type="text/css" href="style.css"> <!-- This stylesheet dynamically changed from style.less -->
+    <!-- responsive css -->
+    <link rel="stylesheet" type="text/css" href="assets/css/responsive.css">
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+        <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body class="defult-home">
+
+    <!--Preloader area start here-->
+    <div id="loader" class="loader orange-color">
+        <div class="loader-container">
+            <div class='loader-icon'>
+                <img src="assets/images/pre-logo1.png" alt="">
             </div>
         </div>
-        <!--Preloader area End here-->
-             
-
-        <!--Full width header Start-->
-        <div class="full-width-header header-style1 home8-style4">
-            <!--Header Start-->
-            <header id="rs-header" class="rs-header">
-                <!-- Topbar Area Start -->
-                <div w3-include-html="Components\Topbar.html"></div>
-                <!-- Topbar Area End -->
-
-                <!-- Menu Start -->
-                 <div w3-include-html="Components\Menu.html"></div>
-                <!-- Menu End -->
-
-                <!-- Canvas Menu start -->
-                <nav class="right_menu_togle hidden-md">
-                    <div class="close-btn">
-                        <div id="nav-close">
-                            <div class="line">
-                                <span class="line1"></span><span class="line2"></span>
-                            </div>
+    </div>
+    <!--Preloader area End here-->
+    <!--Full width header Start-->
+    <div class="full-width-header header-style1 home8-style4">
+        <!--Header Start-->
+        <header id="rs-header" class="rs-header">
+            <!-- Topbar Area Start -->
+            <div w3-include-html="Components\Topbar.html"></div>
+            <!-- Topbar Area End -->
+            <!-- Menu Start -->
+            <div w3-include-html="Components\Menu.html"></div>
+            <!-- Menu End -->
+            <!-- Canvas Menu start -->
+            <nav class="right_menu_togle hidden-md">
+                <div class="close-btn">
+                    <div id="nav-close">
+                        <div class="line">
+                            <span class="line1"></span><span class="line2"></span>
                         </div>
                     </div>
-                    <div class="canvas-logo">
-                        <a href="index.html"><img src="assets/images/dark-logo.png" alt="logo"></a>
-                    </div>
-                    <div class="offcanvas-text">
-                        <p>We denounce with righteous indige nationality and dislike men who are so beguiled and demo  by the charms of pleasure of the moment data com so blinded by desire.</p>
-                    </div>
-                    <div class="offcanvas-gallery">
-                        <div class="gallery-img">
-                            <a class="image-popup" href="assets/images/gallery/1.jpg"><img src="assets/images/gallery/1.jpg" alt=""></a>
-                        </div>
-                        <div class="gallery-img">
-                            <a class="image-popup" href="assets/images/gallery/2.jpg"><img src="assets/images/gallery/2.jpg" alt=""></a>
-                        </div>
-                        <div class="gallery-img">
-                            <a class="image-popup" href="assets/images/gallery/3.jpg"><img src="assets/images/gallery/3.jpg" alt=""></a>
-                        </div>
-                        <div class="gallery-img">
-                            <a class="image-popup" href="assets/images/gallery/4.jpg"><img src="assets/images/gallery/4.jpg" alt=""></a>
-                        </div>
-                        <div class="gallery-img">
-                            <a class="image-popup" href="assets/images/gallery/5.jpg"><img src="assets/images/gallery/5.jpg" alt=""></a>
-                        </div>
-                        <div class="gallery-img">
-                            <a class="image-popup" href="assets/images/gallery/6.jpg"><img src="assets/images/gallery/6.jpg" alt=""></a>
-                        </div>
-                    </div>
-                    <div class="map-img">
-                        <img src="assets/images/map.jpg" alt="">
-                    </div>
-                    <div class="canvas-contact">
-                        <ul class="social">
-                            <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                            <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                            <li><a href="#"><i class="fa fa-pinterest-p"></i></a></li>
-                            <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-                        </ul>
-                    </div>
-                </nav>
-                <!-- Canvas Menu end -->
-            </header>
-            <!--Header End-->
-        </div>
-        <!--Full width header End-->
-
-        <!-- Main content Start -->
-        <div class="main-content">
-            <!-- Breadcrumbs Start -->
-            <div class="rs-breadcrumbs breadcrumbs-overlay">
-                <div class="breadcrumbs-img">
-                    <img src="assets/images/breadcrumbs/2.jpg" alt="Breadcrumbs Image">
                 </div>
-                <div class="breadcrumbs-text white-color">
-                   
-                  
+                <div class="canvas-logo">
+                    <a href="index.html"><img src="assets/images/dark-logo.png" alt="logo"></a>
                 </div>
+                <div class="offcanvas-text">
+                    <p>We denounce with righteous indige nationality and dislike men who are so beguiled and demo  by the charms of pleasure of the moment data com so blinded by desire.</p>
+                </div>
+                <div class="offcanvas-gallery">
+                    <div class="gallery-img">
+                        <a class="image-popup" href="assets/images/gallery/1.jpg"><img src="assets/images/gallery/1.jpg" alt=""></a>
+                    </div>
+                    <div class="gallery-img">
+                        <a class="image-popup" href="assets/images/gallery/2.jpg"><img src="assets/images/gallery/2.jpg" alt=""></a>
+                    </div>
+                    <div class="gallery-img">
+                        <a class="image-popup" href="assets/images/gallery/3.jpg"><img src="assets/images/gallery/3.jpg" alt=""></a>
+                    </div>
+                    <div class="gallery-img">
+                        <a class="image-popup" href="assets/images/gallery/4.jpg"><img src="assets/images/gallery/4.jpg" alt=""></a>
+                    </div>
+                    <div class="gallery-img">
+                        <a class="image-popup" href="assets/images/gallery/5.jpg"><img src="assets/images/gallery/5.jpg" alt=""></a>
+                    </div>
+                    <div class="gallery-img">
+                        <a class="image-popup" href="assets/images/gallery/6.jpg"><img src="assets/images/gallery/6.jpg" alt=""></a>
+                    </div>
+                </div>
+                <div class="map-img">
+                    <img src="assets/images/map.jpg" alt="">
+                </div>
+                <div class="canvas-contact">
+                    <ul class="social">
+                        <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                        <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                        <li><a href="#"><i class="fa fa-pinterest-p"></i></a></li>
+                        <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                    </ul>
+                </div>
+            </nav>
+            <!-- Canvas Menu end -->
+        </header>
+        <!--Header End-->
+    </div>
+    <!--Full width header End-->
+    <!-- Main content Start -->
+    <div class="main-content">
+        <!-- Breadcrumbs Start -->
+        <div class="rs-breadcrumbs breadcrumbs-overlay">
+            <div class="breadcrumbs-img">
+                <img src="assets/images/breadcrumbs/2.jpg" alt="Breadcrumbs Image">
             </div>
-            <!-- Breadcrumbs End -->
+            <div class="breadcrumbs-text white-color">
 
-            <div>
 
-        <section class="privacy-policy container">
-            <h2>Privacy Policy</h2>
-            <article>
-                <h4>General</h4>
-                <p>
-                    In this arrangement, the words "we", "our", and "us" allude to C2C Education and the security component laid out distinguish actually recognizable or individual data that might be gathered, how such data is utilized, and the decisions You have in regards to our utilization of this data.
-                </p>
-                <p>
-                    Notwithstanding the terms expressed in Terms of Service gave under this Website/versatile application (together "Stage"), we are focused on ensuring Your protection. Just approved delegates of C2C Education and on a restricted information diet just utilize any data got from You and as assented by You. We continually audit our frameworks and information to get Your own data. In case of any distinguished unapproved use or exposure of data or upon Your grievance, we will research any such objection or such activities with the end goal of indicting and additionally taking common procedures to recuperate harms against those mindful. Any User who disagrees with any arrangements of this Privacy Policy and the Terms of Service is needed to leave the Platform right away. Should You can't help contradicting this Policy (characterized underneath) and still keep on getting to the Platform and give Your own data, C2C Education renounce every one of the liabilities emerging thusly and it will be expected by Your proceeded with utilization of the Platform that You have acknowledged the Policy and some other online agreements accessible on the Platform.
-                </p>
-            </article>
-            <article>
-                <h4>Applicability</h4>
-                <p>
-                    This security strategy ("Policy") applies to all Users who access the Platform and are accordingly needed to peruse and comprehend the Policy prior to presenting any Personal Information (characterized hereinafter). By submitting Personal Information, You are consenting to the utilization and handling of such data as per this Policy. In the event that You have unintentionally presented any Personal Information to C2C Education preceding perusing the Policy proclamations set out thus, or You disagree with the way where the Personal Information is gathered, put away or utilized, then, at that point You might get to, change and erase all data put away about You by keeping in touch with us at enquiry@c2c.education. C2C Education is keeping individual information of the User, and each User is additionally qualified for require C2C Education to erase and obliterate all such data (yet not that of different Users). 
-                </p>
-                <p>
-                    This Policy applies to the Platform and whatever other administrations that are claimed and worked by C2C Educaton. Outsider sites might put their own treats or different records on the Users' PC, gather information or request individual data from the Users, for which C2C Education isn't dependable or responsible. Appropriately, C2C Education doesn't make any portrayals concerning the protection practices or approaches of such outsiders or terms of utilization of such sites, nor does C2C Education ensure the exactness, respectability, or nature of the data, information, message, programming, sound, photos, illustrations, recordings, messages or different materials accessible on such sites. The incorporation or prohibition doesn't infer any underwriting by C2C Education of the site, the site's supplier, or the data on the site. C2C Education urges the User to peruse the protection strategies of each such site and the User comprehends that its exclusively such outsider who is mindful to the User in such manner.
-                </p>
-                <p>
-                    C2C Education has avoided potential risk according to relevant Indian law and executed industry principles to regard Personal Information as secret and to shield it from unapproved access, inappropriate use or exposure, alteration and unlawful obliteration or unplanned loss of the Personal Information.
-                </p>
-            </article>
-            <article>
-                <h4>Access</h4>
-                <p>
-                    Client are permitted to get to the Platform, register for courses and profit administrations accessible with C2C Education as a visitor and without making a record on the Platform or giving any Personal Information, C2C Education assumes no liability or approve the data given by the visitor, besides as in any case needed under any law, guideline or a request for equipped power. To approach every one of the components and advantages on our Platform, a User is needed to initially make a record on our Platform. To make a record, a User is needed to give Personal Information as might be needed during the hour of enrollment. Other data mentioned on the enrollment page, including the capacity to get limited time offers from C2C Education , is discretionary. C2C Education may, in future, incorporate other discretionary solicitations for data from the User to assist C2C Education with altering the Platform to convey customized data to the User. Without User's understanding, C2C Education won't share, lease or sell any Personal Information with outsiders in any capacity other than what is uncovered in this Policy. C2C Education might track calls got and made for making enquiries, enlisted courses, criticism or different purposes to deliver benefits adequately and productively. 
-                </p>
-            </article>
-            <article>
-                <h4>Individual Information</h4>
-                <p>
-                    "Individual Information" will mean the data which distinguishes the User, name, recognizable proof number, email address, age, sex, or telephone number gave to C2C Education at the hour of enlistment or any time from that point. Individual data might incorporate "touchy individual data or information" as characterized under the Information Technology (Reasonable Security Practices and Procedures and Sensitive Personal Data or Information) Rules, 2011 and in this specific circumstance, incorporates passwords or any monetary record data given by You during enlistment. 
-                </p>
-                <p>
-                    We demand You to not furnish us with any Personal Information except if explicitly mentioned by us. In such occasions, we bear no responsibility to such Personal Information given by You.
-                </p>
-                <p>
-                    The information is saved for a period that doesn't surpass the period fundamental for the reasons for which it is gathered.
-                </p>
-            </article>
-            <article>
-                <h4>Programmed Information Collection</h4>
-                <p>
-                    Our framework gathers data that is sent over the web without Your control. A few instances of the data we gather and examine incorporate the Internet convention (IP) address used to interface Your PC to the web; login; email; secret phrase; PC and association data, for example, program type and form, working framework, and stage; course selected history, which we at times total with comparative data from different clients to make highlights, reports like famous courses, most utilized provisions and so on; the full Uniform Resource Locator (URL) click stream to, and from our Platform, including date and time; treat number; courses or recordings You saw or looked for; the email id You used to call our client care. 
-                </p>
-                <p>
-                    During certain visits we might utilize programming apparatuses like JavaScript to gauge and gather meeting data, including page reaction times, download blunders, length of visits to certain page, course and recordings, page connection data, (for example, looking over, snaps and mouse overs), and techniques used to peruse away from the page. 
-                </p>
-            </article>
-            <article>
-                <h4>Data Security</h4>
-                <p>
-                    To ensure the security of Your Personal data during transmission, we utilize Secure Sockets Layer (SSL) programming, which scrambles data You input. To forestall unapproved admittance to touchy data, You must screen the individuals who approach Your secret word and to Your PC, PC or some other gadget through which Your record can be gotten to. Make certain to close down when completed while utilizing a common PC. 
-                </p>
-                <p>
-                    Nonetheless, kindly note that given the idea of web exchanges, C2C Education doesn't assume any liability for the transmission of data including Personal Information shared by You other than as gone ahead in this Policy. Any transmission of data on the web is done at Your danger and will not be liable for the circumvention of the protection settings or safety efforts either by You or any outsider.
-                </p>
-            </article>
-            <article>
-                <h4>Utitization Of Your Own Data</h4>
-                <p>
-                    While benefiting our administrations You will give admittance to C2C Education Your Personal Information. In the event that that data isn't right, You can demand us to adjust or erase something very similar. C2C Education will take all sensible means to guarantee that the Personal Information is altered and utilized for delivering administrations to You and as in any case in consistence with laws. When altering or erasing Personal Information, we might request that You confirm Your character before we can follow up on Your solicitation. C2C Education may at its prudence reject any solicitation that is in opposition to law, requires un-sensible specialized endeavors. We don't guarantee that we will erase every single lingering duplicate and files made by any outsider without our insight and assent. We never hold Your Personal Information longer than it is needed for the reasons for offering types of assistance through the Platform or as needed by relevant Indian law. Now and again, we may likewise need to move Your Personal Information to outsider specialist organizations, for example to approve exchanges we might share Your monetary information with such outsider suppliers. You thus agree to Your exchange of Personal Information in every such occasion. C2C Education does all such exchanges stringently as per law. 
-                </p>
-                <p>
-                    C2C Education will utilize Your Personal Information to guarantee administrations concerning the Platform are introduced to You in the best way, to get the Platform and make enhancements, to complete our commitments to You, and to speak with You. The said correspondence can either be by calls, message or messages and for purposes which incorporate conditional, administration, or limited time calls or messages. 
-                </p>
-            </article>
-            <article>
-                <h4>Special Cases</h4>
-                <p>
-                    Your Personal Information might be imparted to outsiders who have a need or power to get such data, in the event that we have a decent confidence conviction that entrance, use, safeguarding or revelation of the data is sensibly important to conform to (I) because of any authority getting such data under law (ii) any request for court (iii) distinguish, forestall, or in any case address extortion, security or specialized issues (iv) ensure against damage to the rights, property or wellbeing of C2C Education , our clients or general society as required or allowed by law.
-                </p>
-            </article>
-            <article>
-                <h4>Client Decisions With Respect To Access Of Data</h4>
-                <p>
-                    C2C Education doesn't settle on any spontaneous decisions or in any case market any items or administrations, aside from according to the reason for which such data has been given or taking any input, tending to any grumblings, illuminating You about new components or free/paid courses. Client will not reveal their Personal Information to any outsiders that isn't approved by C2C Education and check the character of such individual who look for data. C2C Education will speak with the Users through call, SMS, email or notification posted on the Platform or through some other means accessible, which will incorporate yet not be restricted to message, different types of informing, calls and so forth The Users can change their email and contact inclinations whenever by signing into their record or by messaging at enquiry@c2c.education. 
-                </p>
-                <p>
-                    C2C Education may, in the event that You so decide, send direct mailers to You at the location given by You. You have the choice to 'quit' this immediate mailer via joins gave at the lower part of every mailer. We regard Your security and to the degree that You decide not to get such mailers, we will find all ways to eliminate You from the rundown. Should You proof any infringement of our terms and arrangements, kindly keep in touch with us at enquiry@c2c.education and report such episode. 
-                </p>
-                <p>
-                    All the data gave to C2C Education by You, You as a User affirms that the equivalent including delicate Personal Information, is valid, exact and willful. Client has the option to pull out data whenever, as per the conditions of this Policy and the Terms of Service. 
-                </p>
-            </article>
-            <article>
-                <h4>Report, Analysis And Confidentiality</h4>
-                <p>
-                    C2C Education might need to utilize Personal Information without reference to any persona or character for research, factual examination working on the Platform of functionalities offered subsequently and business insight reason and may move such exploration, measurable or knowledge information in a collected or non-by and by recognizable structure to outsiders and associates. 
-                </p>
-                <p>
-                    All C2C Education workers and information processors, who approach, and are related with the preparing of touchy individual information or data, are obliged to regard the classification of each User's delicate individual information and data. 
-                </p>
-            </article>
-            <article>
-                <h4>Sharing Of Information</h4>
-                <p>
-                    C2C Education may likewise unveil or move User's own and other data which a User gives, to one more outsider as a feature of revamping or an offer of the resources of C2C Education enterprise division or organization. Any outsider to which C2C Education moves or sells its resources will reserve the privilege to keep on utilizing the individual and other data that a User give to us. 
-                </p>
-                <p>
-                    To the degree important to furnish Users with the administrations on the Platform, C2C Education might give User's Personal Information to outsider project workers who work in the interest of or with C2C Education to furnish Users with such administrations, to assist C2C Education with conveying Users or to keep up with the Platform. For the most part, these project workers don't have any autonomous right to share this data, anyway certain workers for hire who offer types of assistance on the Platform, including the suppliers of online correspondences administrations, online installment door administrations, will have rights to utilize and uncover the Personal Information gathered regarding the arrangement of these administrations as per their own protection strategies.
-                </p>
-                <p>
-                    Moreover, kindly note that we can't handle the activities of different Users of the Platform with whom You might decide to share Your Personal Information, and any such activities for Your sake will be exclusively Your obligation. 
-                </p>
-                <p></p>
-            </article>
-            <article>
-                <h4>Intrest-Based Ads</h4>
-                <p>
-                    On unaffiliated locales, C2C Education might show interest-based publicizing utilizing data You make accessible to us when You communicate with our Platform, content, or administrations. Interest-based advertisements, additionally now and again alluded to as customized or designated promotions, are shown to You dependent on data from exercises like membership on our Platform, visiting destinations that contain C2C Education content or promotions. In giving revenue based promotions, we keep pertinent Indian laws, just as the Code for Self-Regulation in Advertising by the Advertising Standards Council of India and the Self-Regulatory Principles for Online Behavioral Advertising created by the Digital Advertising Alliance (an alliance of showcasing, web based publicizing, and customer support associations).
-                </p>
-                <p>
-                    Like other online promotion organizations, we use treats, web signals (otherwise called activity labels or single-pixel gifs), and different advancements (all in all, "treats"). Treats empower us to find out concerning what advertisements You see, what promotions You click, and different moves You make on our locales and different destinations. This permits us to furnish You with more helpful and applicable promotions. For instance, in the event that we know what advertisements You are shown we can be mindful so as not to show You similar ones more than once. We don't connect Your collaboration with unaffiliated destinations with Your personality in giving You interest-based advertisements. 
-                </p>
-                <p>
-                    We don't give any close to home data to publicists or to outsider locales that show our advantage based advertisements. Nonetheless, promoters and other outsiders (counting the advertisement organizations, advertisement serving organizations, and other specialist co-ops they might utilize) may expect that clients who interface with or click on a customized advertisement or content are essential for the gathering that the advertisement or content is coordinated towards (for instance, clients in eastern India who purchased or perused for writing books). Additionally, some outsiders might give us data about You, (for example, the destinations where You have been shown advertisements or segment data) from disconnected and online sources that we might use to give You more significant and valuable publicizing.
-                </p>
-                <p>
-                    Sponsors or promotion organizations dealing with their benefit at times use innovation to serve the advertisements that show up on our destinations straightforwardly to Your program. They consequently accept Your IP address when this occurs. They may likewise utilize treats to quantify the adequacy of their advertisements and to customize promotion content. We don't approach or power over treats or different provisions that promoters and outsider locales might utilize, and the data practices of these sponsors and outsider sites are not covered by our Policy. Kindly get in touch with them straightforwardly for more data about their protection rehearses. 
-                </p>
-            </article>
-            <article>
-                <h4>Coorection Of Terms And Grievance Announcing</h4>
-                <p>
-                    C2C Education might refresh or alter this Policy whenever, with or without early notification. In the occasion there are critical changes in the manner C2C Education treats User's actually recognizable data, C2C Education will show a notification on the Platform or send Users an email. C2C Education 's present Policy to all data that C2C Education has about Users and their record.
-                </p>
-                <p>
-                    Regardless the abovementioned, C2C Education will not be needed to advise the Users of any progressions made to the protection strategy. Should You have any worry or reject the progressions in the security strategy You can decline to acknowledge the changes and settle on pulling out Your Personal Information by keeping in touch with us at enquiry@c2c.education.
-                </p>
-            </article>
-        </section>
-	
-        <!-- Footer Start -->
-       <div w3-include-html="Components\Footer.html"></div
-        <!-- Footer End -->
-
-        <!-- start scrollUp  -->
-        <div id="scrollUp" class="orange-color">
-            <i class="fa fa-angle-up"></i>
-        </div>
-        <!-- End scrollUp  -->
-
-        <!-- Search Modal Start -->
-        <div aria-hidden="true" class="modal fade search-modal" role="dialog" tabindex="-1">
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span class="flaticon-cross"></span>
-            </button>
-            <div class="modal-dialog modal-dialog-centered">
-                <div class="modal-content">
-                    <div class="search-block clearfix">
-                        <form>
-                            <div class="form-group">
-                                <input class="form-control" placeholder="Search Here..." type="text">
-                            </div>
-                        </form>
-                    </div>
-                </div>
             </div>
         </div>
-        <!-- Search Modal End -->
+        <!-- Breadcrumbs End -->
 
-        <!-- modernizr js -->
-        <script src="assets/js/modernizr-2.8.3.min.js"></script>
-        <!-- jquery latest version -->
-        <script src="assets/js/jquery.min.js"></script>
-        <!-- Bootstrap v4.4.1 js -->
-        <script src="assets/js/bootstrap.min.js"></script>
-        <!-- Menu js -->
-        <script src="assets/js/rsmenu-main.js"></script> 
-        <!-- op nav js -->
-        <script src="assets/js/jquery.nav.js"></script>
-        <!-- wow js -->
-        <script src="assets/js/wow.min.js"></script>     
-        <!-- plugins js -->
-        <script src="assets/js/plugins.js"></script>
-        <!-- magnific popup js -->
-        <script src="assets/js/jquery.magnific-popup.min.js"></script>  
-        <!-- contact form js -->
-        <script src="assets/js/contact.form.js"></script>
-        <!-- main js -->
-        <script src="assets/js/main.js"></script>
-		<script>
-includeHTML();
-</script>
-    </body>
+        <div>
+
+            <section class="privacy-policy container loaded">
+                <h2>Privacy Policy</h2>
+                <article>
+                    <button class="accordion">General</button>
+                    <div class="panel">
+                        <p>
+                            In this arrangement, the words "we", "our", and "us" allude to C2C Education and the security component laid out distinguish actually recognizable or individual data that might be gathered, how such data is utilized, and the decisions You have in regards to our utilization of this data.
+                        </p>
+                        <p>
+                            Notwithstanding the terms expressed in Terms of Service gave under this Website/versatile application (together "Stage"), we are focused on ensuring Your protection. Just approved delegates of C2C Education and on a restricted information diet just utilize any data got from You and as assented by You. We continually audit our frameworks and information to get Your own data. In case of any distinguished unapproved use or exposure of data or upon Your grievance, we will research any such objection or such activities with the end goal of indicting and additionally taking common procedures to recuperate harms against those mindful. Any User who disagrees with any arrangements of this Privacy Policy and the Terms of Service is needed to leave the Platform right away. Should You can't help contradicting this Policy (characterized underneath) and still keep on getting to the Platform and give Your own data, C2C Education renounce every one of the liabilities emerging thusly and it will be expected by Your proceeded with utilization of the Platform that You have acknowledged the Policy and some other online agreements accessible on the Platform.
+                        </p>
+                    </div>
+                </article>
+                <article>
+                    <button class="accordion">Applicability</button>
+                    <div class="panel">
+                        <p>
+                            This security strategy ("Policy") applies to all Users who access the Platform and are accordingly needed to peruse and comprehend the Policy prior to presenting any Personal Information (characterized hereinafter). By submitting Personal Information, You are consenting to the utilization and handling of such data as per this Policy. In the event that You have unintentionally presented any Personal Information to C2C Education preceding perusing the Policy proclamations set out thus, or You disagree with the way where the Personal Information is gathered, put away or utilized, then, at that point You might get to, change and erase all data put away about You by keeping in touch with us at enquiry@c2c.education. C2C Education is keeping individual information of the User, and each User is additionally qualified for require C2C Education to erase and obliterate all such data (yet not that of different Users).
+                        </p>
+                        <p>
+                            This Policy applies to the Platform and whatever other administrations that are claimed and worked by C2C Educaton. Outsider sites might put their own treats or different records on the Users' PC, gather information or request individual data from the Users, for which C2C Education isn't dependable or responsible. Appropriately, C2C Education doesn't make any portrayals concerning the protection practices or approaches of such outsiders or terms of utilization of such sites, nor does C2C Education ensure the exactness, respectability, or nature of the data, information, message, programming, sound, photos, illustrations, recordings, messages or different materials accessible on such sites. The incorporation or prohibition doesn't infer any underwriting by C2C Education of the site, the site's supplier, or the data on the site. C2C Education urges the User to peruse the protection strategies of each such site and the User comprehends that its exclusively such outsider who is mindful to the User in such manner.
+                        </p>
+                        <p>
+                            C2C Education has avoided potential risk according to relevant Indian law and executed industry principles to regard Personal Information as secret and to shield it from unapproved access, inappropriate use or exposure, alteration and unlawful obliteration or unplanned loss of the Personal Information.
+                        </p>
+                    </div>
+                </article>
+                <article>
+                    <button class="accordion">Access</button>
+                    <div class="panel">
+                        <p>
+                            Client are permitted to get to the Platform, register for courses and profit administrations accessible with C2C Education as a visitor and without making a record on the Platform or giving any Personal Information, C2C Education assumes no liability or approve the data given by the visitor, besides as in any case needed under any law, guideline or a request for equipped power. To approach every one of the components and advantages on our Platform, a User is needed to initially make a record on our Platform. To make a record, a User is needed to give Personal Information as might be needed during the hour of enrollment. Other data mentioned on the enrollment page, including the capacity to get limited time offers from C2C Education , is discretionary. C2C Education may, in future, incorporate other discretionary solicitations for data from the User to assist C2C Education with altering the Platform to convey customized data to the User. Without User's understanding, C2C Education won't share, lease or sell any Personal Information with outsiders in any capacity other than what is uncovered in this Policy. C2C Education might track calls got and made for making enquiries, enlisted courses, criticism or different purposes to deliver benefits adequately and productively.
+                        </p>
+                    </div>
+                </article>
+                <article>
+                    <button class="accordion">Individual Information</button>
+                    <div class="panel">
+                        <p>
+                            "Individual Information" will mean the data which distinguishes the User, name, recognizable proof number, email address, age, sex, or telephone number gave to C2C Education at the hour of enlistment or any time from that point. Individual data might incorporate "touchy individual data or information" as characterized under the Information Technology (Reasonable Security Practices and Procedures and Sensitive Personal Data or Information) Rules, 2011 and in this specific circumstance, incorporates passwords or any monetary record data given by You during enlistment.
+                        </p>
+                        <p>
+                            We demand You to not furnish us with any Personal Information except if explicitly mentioned by us. In such occasions, we bear no responsibility to such Personal Information given by You.
+                        </p>
+                        <p>
+                            The information is saved for a period that doesn't surpass the period fundamental for the reasons for which it is gathered.
+                        </p>
+                    </div>
+                </article>
+                <article>
+                    <button class="accordion">Programmed Information Collection</button>
+                    <div class="panel">
+                        <p>
+                            Our framework gathers data that is sent over the web without Your control. A few instances of the data we gather and examine incorporate the Internet convention (IP) address used to interface Your PC to the web; login; email; secret phrase; PC and association data, for example, program type and form, working framework, and stage; course selected history, which we at times total with comparative data from different clients to make highlights, reports like famous courses, most utilized provisions and so on; the full Uniform Resource Locator (URL) click stream to, and from our Platform, including date and time; treat number; courses or recordings You saw or looked for; the email id You used to call our client care.
+                        </p>
+                        <p>
+                            During certain visits we might utilize programming apparatuses like JavaScript to gauge and gather meeting data, including page reaction times, download blunders, length of visits to certain page, course and recordings, page connection data, (for example, looking over, snaps and mouse overs), and techniques used to peruse away from the page.
+                        </p>
+                    </div>
+                </article>
+                <article>
+                    <button class="accordion">Data Security</button>
+                    <div class="panel">
+                        <p>
+                            To ensure the security of Your Personal data during transmission, we utilize Secure Sockets Layer (SSL) programming, which scrambles data You input. To forestall unapproved admittance to touchy data, You must screen the individuals who approach Your secret word and to Your PC, PC or some other gadget through which Your record can be gotten to. Make certain to close down when completed while utilizing a common PC.
+                        </p>
+                        <p>
+                            Nonetheless, kindly note that given the idea of web exchanges, C2C Education doesn't assume any liability for the transmission of data including Personal Information shared by You other than as gone ahead in this Policy. Any transmission of data on the web is done at Your danger and will not be liable for the circumvention of the protection settings or safety efforts either by You or any outsider.
+                        </p>
+                    </div>
+                </article>
+                <article>
+                    <button class="accordion">Utitization Of Your Own Data</button>
+                    <div class="panel">
+                        <p>
+                            While benefiting our administrations You will give admittance to C2C Education Your Personal Information. In the event that that data isn't right, You can demand us to adjust or erase something very similar. C2C Education will take all sensible means to guarantee that the Personal Information is altered and utilized for delivering administrations to You and as in any case in consistence with laws. When altering or erasing Personal Information, we might request that You confirm Your character before we can follow up on Your solicitation. C2C Education may at its prudence reject any solicitation that is in opposition to law, requires un-sensible specialized endeavors. We don't guarantee that we will erase every single lingering duplicate and files made by any outsider without our insight and assent. We never hold Your Personal Information longer than it is needed for the reasons for offering types of assistance through the Platform or as needed by relevant Indian law. Now and again, we may likewise need to move Your Personal Information to outsider specialist organizations, for example to approve exchanges we might share Your monetary information with such outsider suppliers. You thus agree to Your exchange of Personal Information in every such occasion. C2C Education does all such exchanges stringently as per law.
+                        </p>
+                        <p>
+                            C2C Education will utilize Your Personal Information to guarantee administrations concerning the Platform are introduced to You in the best way, to get the Platform and make enhancements, to complete our commitments to You, and to speak with You. The said correspondence can either be by calls, message or messages and for purposes which incorporate conditional, administration, or limited time calls or messages.
+                        </p>
+                    </div>
+                </article>
+                <article>
+                    <button class="accordion">Special Cases</button>
+                    <div class="panel">
+                        <p>
+                            Your Personal Information might be imparted to outsiders who have a need or power to get such data, in the event that we have a decent confidence conviction that entrance, use, safeguarding or revelation of the data is sensibly important to conform to (I) because of any authority getting such data under law (ii) any request for court (iii) distinguish, forestall, or in any case address extortion, security or specialized issues (iv) ensure against damage to the rights, property or wellbeing of C2C Education , our clients or general society as required or allowed by law.
+                        </p>
+                    </div>
+                </article>
+                <article>
+                    <button class="accordion">Client Decisions With Respect To Access Of Data</button>
+                    <div class="panel">
+                        <p>
+                            C2C Education doesn't settle on any spontaneous decisions or in any case market any items or administrations, aside from according to the reason for which such data has been given or taking any input, tending to any grumblings, illuminating You about new components or free/paid courses. Client will not reveal their Personal Information to any outsiders that isn't approved by C2C Education and check the character of such individual who look for data. C2C Education will speak with the Users through call, SMS, email or notification posted on the Platform or through some other means accessible, which will incorporate yet not be restricted to message, different types of informing, calls and so forth The Users can change their email and contact inclinations whenever by signing into their record or by messaging at enquiry@c2c.education.
+                        </p>
+                        <p>
+                            C2C Education may, in the event that You so decide, send direct mailers to You at the location given by You. You have the choice to 'quit' this immediate mailer via joins gave at the lower part of every mailer. We regard Your security and to the degree that You decide not to get such mailers, we will find all ways to eliminate You from the rundown. Should You proof any infringement of our terms and arrangements, kindly keep in touch with us at enquiry@c2c.education and report such episode.
+                        </p>
+                        <p>
+                            All the data gave to C2C Education by You, You as a User affirms that the equivalent including delicate Personal Information, is valid, exact and willful. Client has the option to pull out data whenever, as per the conditions of this Policy and the Terms of Service.
+                        </p>
+                    </div>
+                </article>
+                <article>
+                    <button class="accordion">Report, Analysis And Confidentiality</button>
+                    <div class="panel">
+                        <p>
+                            C2C Education might need to utilize Personal Information without reference to any persona or character for research, factual examination working on the Platform of functionalities offered subsequently and business insight reason and may move such exploration, measurable or knowledge information in a collected or non-by and by recognizable structure to outsiders and associates.
+                        </p>
+                        <p>
+                            All C2C Education workers and information processors, who approach, and are related with the preparing of touchy individual information or data, are obliged to regard the classification of each User's delicate individual information and data.
+                        </p>
+                    </div>
+                </article>
+                <article>
+                    <button class="accordion">Sharing Of Information</button>
+                    <div class="panel">
+                        <p>
+                            C2C Education may likewise unveil or move User's own and other data which a User gives, to one more outsider as a feature of revamping or an offer of the resources of C2C Education enterprise division or organization. Any outsider to which C2C Education moves or sells its resources will reserve the privilege to keep on utilizing the individual and other data that a User give to us.
+                        </p>
+                        <p>
+                            To the degree important to furnish Users with the administrations on the Platform, C2C Education might give User's Personal Information to outsider project workers who work in the interest of or with C2C Education to furnish Users with such administrations, to assist C2C Education with conveying Users or to keep up with the Platform. For the most part, these project workers don't have any autonomous right to share this data, anyway certain workers for hire who offer types of assistance on the Platform, including the suppliers of online correspondences administrations, online installment door administrations, will have rights to utilize and uncover the Personal Information gathered regarding the arrangement of these administrations as per their own protection strategies.
+                        </p>
+                        <p>
+                            Moreover, kindly note that we can't handle the activities of different Users of the Platform with whom You might decide to share Your Personal Information, and any such activities for Your sake will be exclusively Your obligation.
+                        </p>
+                        <p></p>
+                    </div>
+                </article>
+                <article>
+                    <button class="accordion">Intrest-Based Ads</button>
+                    <div class="panel">
+                        <p>
+                            On unaffiliated locales, C2C Education might show interest-based publicizing utilizing data You make accessible to us when You communicate with our Platform, content, or administrations. Interest-based advertisements, additionally now and again alluded to as customized or designated promotions, are shown to You dependent on data from exercises like membership on our Platform, visiting destinations that contain C2C Education content or promotions. In giving revenue based promotions, we keep pertinent Indian laws, just as the Code for Self-Regulation in Advertising by the Advertising Standards Council of India and the Self-Regulatory Principles for Online Behavioral Advertising created by the Digital Advertising Alliance (an alliance of showcasing, web based publicizing, and customer support associations).
+                        </p>
+                        <p>
+                            Like other online promotion organizations, we use treats, web signals (otherwise called activity labels or single-pixel gifs), and different advancements (all in all, "treats"). Treats empower us to find out concerning what advertisements You see, what promotions You click, and different moves You make on our locales and different destinations. This permits us to furnish You with more helpful and applicable promotions. For instance, in the event that we know what advertisements You are shown we can be mindful so as not to show You similar ones more than once. We don't connect Your collaboration with unaffiliated destinations with Your personality in giving You interest-based advertisements.
+                        </p>
+                        <p>
+                            We don't give any close to home data to publicists or to outsider locales that show our advantage based advertisements. Nonetheless, promoters and other outsiders (counting the advertisement organizations, advertisement serving organizations, and other specialist co-ops they might utilize) may expect that clients who interface with or click on a customized advertisement or content are essential for the gathering that the advertisement or content is coordinated towards (for instance, clients in eastern India who purchased or perused for writing books). Additionally, some outsiders might give us data about You, (for example, the destinations where You have been shown advertisements or segment data) from disconnected and online sources that we might use to give You more significant and valuable publicizing.
+                        </p>
+                        <p>
+                            Sponsors or promotion organizations dealing with their benefit at times use innovation to serve the advertisements that show up on our destinations straightforwardly to Your program. They consequently accept Your IP address when this occurs. They may likewise utilize treats to quantify the adequacy of their advertisements and to customize promotion content. We don't approach or power over treats or different provisions that promoters and outsider locales might utilize, and the data practices of these sponsors and outsider sites are not covered by our Policy. Kindly get in touch with them straightforwardly for more data about their protection rehearses.
+                        </p>
+                    </div>
+                </article>
+                <article>
+                    <button class="accordion">Coorection Of Terms And Grievance Announcing</button>
+                    <div class="panel">
+                        <p>
+                            C2C Education might refresh or alter this Policy whenever, with or without early notification. In the occasion there are critical changes in the manner C2C Education treats User's actually recognizable data, C2C Education will show a notification on the Platform or send Users an email. C2C Education 's present Policy to all data that C2C Education has about Users and their record.
+                        </p>
+                        <p>
+                            Regardless the abovementioned, C2C Education will not be needed to advise the Users of any progressions made to the protection strategy. Should You have any worry or reject the progressions in the security strategy You can decline to acknowledge the changes and settle on pulling out Your Personal Information by keeping in touch with us at enquiry@c2c.education.
+                        </p>
+                    </div>
+                </article>
+                <style>
+                    .accordion {
+                        background-color: hex;
+                        color: #444;
+                        font-weight: bold;
+                        cursor: pointer;
+                        padding: 18px;
+                        width: 100%;
+                        border: none;
+                        text-align: left;
+                        outline: none;
+                        font-size: 30px;
+                        transition: 0.4s;
+                    }
+
+                        .active, .accordion:hover {
+                            background-color: hsl(153, 100%, 89%);
+                        }
+
+                        .accordion:after {
+                            content: '-';
+                            color: #bbb;
+                            font-weight: bold;
+                            float: right;
+                            margin-left: 5px;
+                        }
+
+                    .active:after {
+                        content: "+";
+                    }
+
+                    .panel {
+                        padding: 0 18px;
+                        background-color: white;
+                        max-height: 0;
+                        overflow: hidden;
+                        transition: max-height 0.2s ease-out;
+                    }
+                </style>
+                <script>
+                    var acc = document.getElementsByClassName("accordion");
+                    var i;
+                    for (i = 0; i < acc.length; i++) {
+                        var panel = acc[i].nextElementSibling;
+                        panel.style.maxHeight = panel.scrollHeight + "px";
+
+                        acc[i].addEventListener("click", function () {
+                            this.classList.toggle("active");
+
+                            var panel = this.nextElementSibling;
+                            if (panel.style.maxHeight) {
+                                panel.style.maxHeight = null;
+                            } else {
+                                panel.style.maxHeight = panel.scrollHeight + "px";
+                            }
+                        });
+                    }
+                </script>
+            </section>
+
+            <!-- Footer Start -->
+            <div w3-include-html="Components\Footer.html"></div>
+            <!-- Footer End -->
+            <!-- start scrollUp  -->
+            <div id="scrollUp" class="orange-color">
+                <i class="fa fa-angle-up"></i>
+            </div>
+            <!-- End scrollUp  -->
+            <!-- Search Modal Start -->
+            <div aria-hidden="true" class="modal fade search-modal" role="dialog" tabindex="-1">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span class="flaticon-cross"></span>
+                </button>
+                <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                        <div class="search-block clearfix">
+                            <form>
+                                <div class="form-group">
+                                    <input class="form-control" placeholder="Search Here..." type="text">
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Search Modal End -->
+            <!-- modernizr js -->
+            <script src="assets/js/modernizr-2.8.3.min.js"></script>
+            <!-- jquery latest version -->
+            <script src="assets/js/jquery.min.js"></script>
+            <!-- Bootstrap v4.4.1 js -->
+            <script src="assets/js/bootstrap.min.js"></script>
+            <!-- Menu js -->
+            <script src="assets/js/rsmenu-main.js"></script>
+            <!-- op nav js -->
+            <script src="assets/js/jquery.nav.js"></script>
+            <!-- wow js -->
+            <script src="assets/js/wow.min.js"></script>
+            <!-- plugins js -->
+            <script src="assets/js/plugins.js"></script>
+            <!-- magnific popup js -->
+            <script src="assets/js/jquery.magnific-popup.min.js"></script>
+            <!-- contact form js -->
+            <script src="assets/js/contact.form.js"></script>
+            <!-- main js -->
+            <script src="assets/js/main.js"></script>
+            <script>
+                includeHTML();
+            </script>
+</body>
 </html>
