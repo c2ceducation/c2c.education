@@ -3,7 +3,7 @@ const pay=document.getElementById('pay');
 if(pay!=null){
 pay.addEventListener('click',function(e){
     const val=amount.innerHTML.replace("₹","");
-    const c=`http://secure.c2c.education/pay?amount=${val}`;
+    const c=`http://secure.c2c.education/pay/pplab?amount=${val}`;
     pay.setAttribute("href",c);
 });
 }
