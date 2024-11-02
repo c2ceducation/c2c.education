@@ -2,16 +2,18 @@ const amount=document.getElementById('amount');
 const pay=document.getElementById('pay');
 if(pay!=null){
 pay.addEventListener('click',function(e){
-    const val=amount.innerHTML.replace("₹","");
-    const c=`https://secure.c2c.education/pay/pplab?amount=${val}`;
+    const val = amount.innerHTML.replace("₹", "");
+    const noteVal = location.pathname.replace(".html", "").replace("/", "") + " Course";
+    const c = `https://secure.c2c.education/pay/pplab?amount=${val}&note=${noteVal}`;
     pay.setAttribute("href",c);
 });
 }
 const paytwo=document.getElementById('paytwo');
 if(paytwo!=null){
 paytwo.addEventListener('click',function(e){
-    const val=amount.innerHTML.replace("₹","");
-    const c=`https://secure.c2c.education/pay/dplab?amount=${val}`;
+    const val = amount.innerHTML.replace("₹", "");
+    const noteVal = location.pathname.replace(".html", "").replace("/", "") + " Course";
+    const c = `https://secure.c2c.education/pay/dplab?amount=${val}&note=${noteVal}`;
     paytwo.setAttribute("href",c);
 });
 }
