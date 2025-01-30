@@ -1,5 +1,9 @@
 const amount=document.getElementById('amount');
-const pay=document.getElementById('pay');
+var pay=document.getElementById('pay');
+if(pay!=null && pay.innerText.includes("PhonePe")){//remove the phonepe button	
+	pay.parentNode.remove();
+	pay=document.getElementById('pay')
+}
 if(pay!=null){
 pay.addEventListener('click',function(e){
     const val = amount.innerHTML.replace("₹", "");
