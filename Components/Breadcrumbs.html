@@ -10,10 +10,18 @@
     </div>
 </div>
 <script>
-    (function() {
-        var meta = document.querySelector('meta[name="breadcrumb-title"]');
-        var title = meta ? meta.getAttribute('content') : document.title.replace(' | C2C Education', '').replace('C2C Education', '');
-        document.getElementById('breadcrumb-title').textContent = title.trim();
+    (function () {
+        setTimeout(function () {
+            var breadcrumbTitleElement = document.getElementById('breadcrumb-title');
+            if (breadcrumbTitleElement) {
+                var title = breadcrumbTitleElement.textContent.trim();
+                if (!title) {
+                    var meta = document.querySelector('meta[name="breadcrumb-title"]');
+                    title = meta ? meta.getAttribute('content') : document.title.replace(' | C2C Education', '').replace('C2C Education', '');
+                    breadcrumbTitleElement.textContent = title.trim();
+                }
+            }
+        }, 500);      
     })();
 </script>
 			
