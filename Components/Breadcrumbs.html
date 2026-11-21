@@ -3,13 +3,18 @@
         <img src="assets/images/breadcrumbs/2.jpg" alt="Breadcrumbs Image">
     </div>
     <div class="breadcrumbs-text white-color">
-        <h1 class="page-title">Learn  User Interface and User Experience</h1>
+        <h1 class="page-title" id="breadcrumb-title"></h1>
         <ul>
-            
-            </li>
             <li>Course Details</li>
         </ul>
     </div>
 </div>
+<script>
+    (function() {
+        var meta = document.querySelector('meta[name="breadcrumb-title"]');
+        var title = meta ? meta.getAttribute('content') : document.title.replace(' | C2C Education', '').replace('C2C Education', '');
+        document.getElementById('breadcrumb-title').textContent = title.trim();
+    })();
+</script>
 			
 	

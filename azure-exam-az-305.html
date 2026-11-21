@@ -27,6 +27,7 @@
     </script>
     <meta charset="utf-8">
     <title>AZ-305: Designing Microsoft Azure Infrastructure Solutions | C2C Education</title>
+    <meta name="breadcrumb-title" content="AZ-305: Designing Microsoft Azure Infrastructure Solutions">
     <meta name="description" content="Prepare for the AZ-305 Microsoft Azure Infrastructure Solutions exam with C2C Education. Comprehensive training covering identity, governance, data storage, business continuity, and infrastructure.">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -78,7 +79,24 @@
             <!--Breadcrumps Start-->
             <div w3-include-html="Components\Breadcrumbs.html"></div>
             <!--Breadcrumps End -->
-
+            <div class="rs-breadcrumbs breadcrumbs-overlay">
+                <div class="breadcrumbs-img">
+                    <img src="assets/images/breadcrumbs/2.jpg" alt="Breadcrumbs Image">
+                </div>
+                <div class="breadcrumbs-text white-color">
+                    <h1 class="page-title" id="breadcrumb-title"></h1>
+                    <ul>
+                        <li>Course Details</li>
+                    </ul>
+                </div>
+            </div>
+            <script>
+                (function () {
+                    var meta = document.querySelector('meta[name="breadcrumb-title"]');
+                    var title = meta ? meta.getAttribute('content') : document.title.replace(' | C2C Education', '').replace('C2C Education', '');
+                    document.getElementById('breadcrumb-title').textContent = title.trim();
+                })();
+            </script>
             <!--IntroCourse Start-->
             <section class="intro-section gray-bg pt-94 pb-100 md-pt-64 md-pb-70">
                 <div class="container">
@@ -233,11 +251,16 @@
                                             <span class="label">Mode</span>
                                             <span class="value">Virtual (IST Hrs)</span>
                                         </li>
+                                        <li class="assessments-feature">
+                                            <i class="fa fa-dollar"></i>
+                                            <span class="label">Pricing Info</span>
+                                            <span class="value">$999</span>
+                                        </li>
                                     </ul>
                                 </div>
 
                                 <div class="btn-part">
-                                    <a href="#0" class="btn readon2 orange">$999</a>
+                                    <a href="#0" class="btn readon2 orange">Contact us for $999</a>
                                 </div>
                             </div>
                         </div>
@@ -246,11 +269,9 @@
                 </div>
             </section>
             <!--IntroCourse End-->
-
             <!-- Footer Start -->
             <div w3-include-html="Components\Footer.html"></div>
             <!-- Footer End -->
-
             <!-- Whatsapp chat support starts -->
             <div class="whatsapp_chat_support wcs_fixed_right" style="width: 50px;" id="whatsapp-popup">
                 <div class="wcs_button wcs_button_circle">
