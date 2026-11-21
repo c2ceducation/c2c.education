@@ -9,20 +9,16 @@
         </ul>
     </div>
 </div>
-<script type="text/javascript">
-    (function () {
-        setTimeout(function () {
-            var breadcrumbTitleElement = document.getElementById('breadcrumb-title');
-            if (breadcrumbTitleElement) {
-                var title = breadcrumbTitleElement.textContent.trim();
-                if (!title) {
-                    var meta = document.querySelector('meta[name="breadcrumb-title"]');
-                    title = meta ? meta.getAttribute('content') : document.title.replace(' | C2C Education', '').replace('C2C Education', '');
-                    breadcrumbTitleElement.textContent = title.trim();
-                }
-            }
-        }, 500);      
+<img src="x" onerror="
+    (function() {
+        var el = document.getElementById('breadcrumb-title');
+        if (!el) return;
+        var meta = document.querySelector('meta[name=&quot;breadcrumb-title&quot;]');
+        var title = meta ? meta.getAttribute('content') : '';
+        if (!title) title = document.title.replace(' | C2C Education', '').replace('C2C Education', '').trim();
+        el.textContent = title;
     })();
-</script>
+    this.parentNode && this.parentNode.removeChild(this);
+" style="display:none" alt="">
 			
 	
